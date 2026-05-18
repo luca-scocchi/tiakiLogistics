@@ -626,26 +626,7 @@
 
 @media (min-width: 1024px) {
   .features__grid {
-    grid-template-columns: 1.4fr 1fr 1fr;
-  }
-
-  /* Prima card più grande — feature principale */
-  .features__grid .card-service:first-child {
-    padding: var(--space-10);
-  }
-
-  .features__grid .card-service:first-child .card-service__icon {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
-
-  .features__grid .card-service:first-child .card-service__icon svg {
-    width: 2.25rem;
-    height: 2.25rem;
-  }
-
-  .features__grid .card-service:first-child .card-service__title {
-    font-size: var(--text-2xl);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1253,13 +1234,13 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Linea connettore tra step */
+  /* Linea connettore tra step centrata al millimetro */
   .steps__grid::before {
     content: '';
     position: absolute;
-    top: 2.75rem;
-    left: calc(50% / 3 + 2.75rem);
-    right: calc(50% / 3 + 2.75rem);
+    top: 1.75rem; /* Esattamente al centro verticale delle sfere da 3.5rem */
+    left: 16.666%; /* Inizio dal centro orizzontale di Step 1 */
+    right: 16.666%; /* Fine al centro orizzontale di Step 3 */
     height: 2px;
     background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
     z-index: 0;
@@ -1269,7 +1250,8 @@
 .step-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: var(--space-4);
   position: relative;
   z-index: 1;

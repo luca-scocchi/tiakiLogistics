@@ -458,6 +458,9 @@
     box-shadow var(--transition-base);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* Linea colorata superiore */
